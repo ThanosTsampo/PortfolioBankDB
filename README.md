@@ -26,7 +26,7 @@ The database models a simple banking architecture with four tables: `Customers`,
 Calculates total accounts and total balance per customer using aggregate functions and left joins.
 * **Methods:** `LEFT JOIN`, `GROUP BY`, `SUM()`, `COUNT()`, `ISNULL()`
 
-![Query 1](screenshots/02_query1_customer_portfolio.png)
+![Query 1](Screenshots_PortfolioBankDB_miniProject/02_query1_customer_portfolio.png)
 
 ---
 
@@ -34,7 +34,7 @@ Calculates total accounts and total balance per customer using aggregate functio
 Identifies active loans linked to high-value customer criteria using nested subqueries.
 * **Methods:** `INNER JOIN`, `WHERE`, `Subquery (IN)`
 
-![Query 2](screenshots/03_query2_high_value_loans.png)
+![Query 2](Screenshots_PortfolioBankDB_miniProject/03_query2_high_value_loans.png)
 
 ---
 
@@ -42,7 +42,7 @@ Identifies active loans linked to high-value customer criteria using nested subq
 Performs automated risk categorization and flagging for anti-money laundering (AML) monitoring based on transaction amounts.
 * **Methods:** `CASE WHEN (Flagging)`, `ORDER BY`
 
-![Query 3](screenshots/04_query3_transaction_risk_flagging.png)
+![Query 3](Screenshots_PortfolioBankDB_miniProject/04_query3_transaction_risk_flagging.png)
 
 ---
 
@@ -50,7 +50,7 @@ Performs automated risk categorization and flagging for anti-money laundering (A
 Ranks accounts within each account type based on their balances using Common Table Expressions and window ranking functions.
 * **Methods:** `CTE (WITH)`, `DENSE_RANK() OVER (PARTITION BY)`, `INNER JOIN`
 
-![Query 4](screenshots/05_query4_account_ranking_cte.png)
+![Query 4](Screenshots_PortfolioBankDB_miniProject/05_query4_account_ranking_cte.png)
 
 ---
 
@@ -58,7 +58,7 @@ Ranks accounts within each account type based on their balances using Common Tab
 Calculates the historical running balance for every account ordered chronologically by transaction date.
 * **Methods:** `SUM() OVER (PARTITION BY ORDER BY)`, `CASE WHEN`
 
-![Query 5](screenshots/06_query5_running_balance.png)
+![Query 5](Screenshots_PortfolioBankDB_miniProject/06_query5_running_balance.png)
 
 ---
 
