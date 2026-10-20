@@ -16,7 +16,7 @@ The project consists of two main T-SQL scripts:
 
 The database models a simple banking architecture with four tables: `Customers`, `Accounts`, `Products`, and `Transactions`.
 
-![Database Setup](screenshots/01_database_setup.png)
+![Database Setup](Screenshots_PortfolioBankDB_miniProject/01_database_setup.png)
 
 ---
 
