@@ -1,0 +1,16 @@
+product_id,customer_id,type,amount,status
+2001,101,Mortgage,250000.00,Active
+2002,101,Credit Card,5000.00,Active
+2003,101,Loan,15000.00,Closed
+2004,102,Credit Card,2000.00,Active
+2005,103,Mortgage,180000.00,Active
+2006,103,Credit Card,10000.00,Active
+2007,103,Credit Card,3000.00,Closed
+2008,105,Loan,0.00,Active
+2009,106,Mortgage,850000.00,Active
+2010,107,Loan,5000.00,Closed
+2011,108,Credit Card,1500.00,Active
+2012,109,Credit Card,4000.00,Active
+2013,111,Mortgage,500000.00,Active
+2014,111,Credit Card,20000.00,Active
+2015,111,Credit Card,10000.00,Active
