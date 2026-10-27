@@ -1,8 +1,8 @@
-USE PortfolioBankDB;
+﻿USE PortfolioBankDB;
 GO
 -- -----------------------------------------------------------------
--- QUERY 1: Customer Portfolio Summary
--- Methods/Commands: LEFT JOIN, GROUP BY, SUM(), COUNT(), ISNULL()
+-- 1: Customer Portfolio Summary
+-- ΣΥΝΔΥΑΣΜΟΣ LEFT JOINs, GROUP BY, Aggregate Functions (SUM, COUNT) ΚΑΙ Null Handling Functions (ISNULL)
 -- -----------------------------------------------------------------
 SELECT 
     c.customer_id,
@@ -15,8 +15,8 @@ GROUP BY c.customer_id, c.customer_name
 ORDER BY total_balance DESC;
 
 -- -----------------------------------------------------------------
--- QUERY 2: High-Value Loans via Subquery
--- Methods/Commands: INNER JOIN, WHERE, Subquery (IN)
+-- 2: High-Value Loans via Subquery
+-- ΣΥΝΔΥΑΣΜΟΣ INNER JOINs, WHERE Clauses ΚΑΙ Subqueries (ΜΕ ΧΡΗΣΗ ΤΟΥ ΤΕΛΕΣΤΗ IN).
 -- -----------------------------------------------------------------
 SELECT 
     c.customer_id,
@@ -34,8 +34,8 @@ WHERE p.type = 'Loan'
 ORDER BY p.amount DESC;
 
 -- -----------------------------------------------------------------
--- QUERY 3: Transaction Risk Flagging (AML Compliance)
--- Methods/Commands: CASE WHEN (Flagging), ORDER BY
+-- 3: Transaction Risk Flagging (AML Compliance)
+-- ΣΥΝΔΥΑΣΜΟΣ Conditional Expressions (CASE WHEN) ΚΑΙ Sorting (ORDER BY)
 -- -----------------------------------------------------------------
 SELECT 
     t.transaction_id,
@@ -52,8 +52,8 @@ FROM dbo.Transactions t
 ORDER BY t.amount DESC;
 
 -- -----------------------------------------------------------------
--- QUERY 4: Account Balance Ranking per Type via CTE
--- Methods/Commands: CTE (WITH), DENSE_RANK() OVER (PARTITION BY), INNER JOIN
+-- 4: Account Balance Ranking per Type via CTE
+-- ΣΥΝΔΥΑΣΜΟΣ Common Table Expressions / CTEs (WITH), Window Functions (DENSE_RANK ΜΕ PARTITION BY) και INNER JOINs
 -- -----------------------------------------------------------------
 WITH RankedAccounts AS (
     SELECT 
@@ -74,8 +74,8 @@ FROM RankedAccounts ra
 JOIN dbo.Customers c ON ra.customer_id = c.customer_id;
 
 -- -----------------------------------------------------------------
--- QUERY 5: Running Balance per Account
--- Methods/Commands: SUM() OVER (PARTITION BY ORDER BY), CASE WHEN
+-- 5: Running Balance per Account
+-- ΣΥΝΔΥΑΣΜΟΣ Window Functions (SUM ΜΕ PARTITION BY & ORDER BY) ΚΑΙ Conditional Logic (CASE WHEN)
 -- -----------------------------------------------------------------
 SELECT 
     t.account_id,
